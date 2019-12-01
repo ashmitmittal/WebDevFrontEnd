@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href=".css"> -->
+    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <title>React</title>
+</head>
+<body>
+    <div id="app">
+        <script type="text/babel">
+            class RandomBox extends React.Component {
+                render() {
+                    const fontSize = Math.floor(Math.random() * 80) +20;
+                    const backgroundColor = ['red','green','blue','black'][Math.floor(Math.random()*4)];
+                    return (
+                        <div style={{
+                            fontSize: `${fontSize}px`,
+                            backgroundColor,
+                            color: 'white',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            height: '200px',
+                            width: '500px',
+                        }}>
+                            Random Box
+                        </div>
+                    );
+                }
+            }
+            ReactDOM.render(<RandomBox />,document.getElementById('app'));
+        </script>
+    </div>
+</body>
+</html>
