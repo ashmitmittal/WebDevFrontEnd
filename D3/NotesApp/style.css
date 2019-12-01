@@ -1,0 +1,36 @@
+body {
+    background: black;
+    color: red;
+}
+h1 {
+    text-align: center;
+}
+.note {
+    border: 1px solid green;
+    text-align: center;
+}
+.btn {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    background-color: red;
+    font-size: 10px;
+    font-weight: 200px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 2px 8px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 0 6px #efa424;
+}
+.btn:hover {
+    box-shadow: 0 4px #efa424;
+    top: 2px;
+  }
+  .btn:active {
+    box-shadow: none;
+    top: 6px;
+  }
