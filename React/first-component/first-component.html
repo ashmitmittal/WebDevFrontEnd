@@ -13,19 +13,28 @@
 <body>
     <div id="app">
         <script type="text/babel">
+            class HobbyList extends React.Component {
+                render() {
+                    const hobbies = ['sleeping','eating','cuddling'];
+                    const liStyle = {fontSize: '1.5em'};
+                   return ( 
+                        <ul>
+                            {hobbies.map((h,i) => {
+                                return <li key={i} style={liStyle}>{h}</li>
+                            })}
+                        </ul>
+                   );
+                }
+            }
             class Pet extends React.Component {
                 render() {
-                    const liStyle = {fontSize: '1.5em'};
                     return (
                         <div className="card">
                             <h2 className="name">Some pic</h2>
                             <img src="https://images.unsplash.com/photo-1575046458639-ec976a9e4a28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
                              alt="Some pic from unsplash" />
                             <h5 style={{fontSize:'2em',margin:'2px'}}>Hobbies:</h5>
-                            <ul>
-                                <li style={liStyle}>Sleep</li>
-                                <li style={liStyle}>Eat</li>
-                            </ul>
+                            <HobbyList />
                         </div>
                     );
                 }
