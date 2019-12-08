@@ -6,7 +6,7 @@ import './RecipeList.css';
 function RecipeList(props) {
     
     
-    const recipes = props.recipes.map((r,index) => (
+    const recipes = props.recipess.map((r,index) => (
         <Recipe key={index} {...r} />
     ));
     return(

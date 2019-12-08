@@ -31,7 +31,7 @@ function RecipeApp() {
   return (
     <div className="App">
       <Navbar />
-      <RecipeList recipes={defaultProps.recipes}/>
+      <RecipeList recipess={defaultProps.recipes}/>
     </div>
   );
 }
