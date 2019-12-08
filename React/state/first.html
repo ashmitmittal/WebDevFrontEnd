@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <title>React</title>
+</head>
+<body>
+    <div id="app">
+        <script type="text/babel">
+            class App extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = {favColor: 'red'};
+                    
+                    setTimeout(() => {
+                        this.setState({favColor: 'blue'})
+                    },3000);
+                }
+                render() {
+                    return (
+                        <div>
+                           <h4> my favCOlor is: </h4>
+                            {this.state.favColor}
+                        </div>
+                    );
+                }
+            }
+            ReactDOM.render(<App />,document.getElementById("app"));
+        </script>
+    </div>
+</body>
+</html>
