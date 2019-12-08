@@ -4,17 +4,19 @@ import './App.css';
 
 function App() {
   const [name,setName] = useState('Ashmit');
-  const handelClick = () =>{
+  const [name2,setName2] = useState('Ashmit');
+  setTimeout(() =>{
     setName('Piyush')
-  }
+    setName2('coder')
+  },5000)
   return (
     <div className="App">
       <p>
-        Hi my name is {name}. People call me {name}. full name {name}
+        Hi my name is {name}. People call me {name2}.
       </p>
-<button
+{/* <button
 onClick={handelClick}
->Click me</button>
+>Click me</button> */}
 
     </div>
   );
