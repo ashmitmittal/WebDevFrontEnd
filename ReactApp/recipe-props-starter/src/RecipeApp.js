@@ -6,7 +6,12 @@ import './RecipeApp.css';
 function RecipeApp() {
   return (
     <div className="App">
-      <Recipe  title="pasta" ingredients={['flour','water']}/>
+      <Recipe  
+        title="pasta"
+        ingredients={['flour','water']}
+        instructions="Mix ingredients"
+        img="img1.jpg"
+      />
     </div>
   );
 }
