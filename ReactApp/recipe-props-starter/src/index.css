@@ -6,7 +6,7 @@ body {
     font-family: 'Solway', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(192,128,128);
+  background: white;
 }
 
 code {
