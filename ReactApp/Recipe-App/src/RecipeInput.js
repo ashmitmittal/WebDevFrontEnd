@@ -2,18 +2,6 @@ import React, { useState } from "react";
 import "./RecipeInput.css";
 
 function RecipeInput(props) {
-	const det = props.recipess;
-	const [title, setTitle] = useState("");
-	const handelSubmit = (e) => {
-		e.preventDefault();
-		if (!title) return;
-		addTitle(title);
-		setTitle("");
-	};
-	const addTitle = (title) => {
-		const NewTitle = [...det, { title }];
-	};
-
 	return (
 		<div className="recipe-form-container">
 			<form className="recipe-form" onSubmit={handelSubmit}>

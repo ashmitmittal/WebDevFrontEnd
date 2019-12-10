@@ -39,12 +39,10 @@ function RecipeApp(props) {
 		}
 	]);
 
-
-
 	return (
 		<div className="App">
 			<Navbar />
-			<RecipeInput  recipess={recipes} />
+			<RecipeInput recipess={recipes} setValue={setValue} />
 			<RecipeList recipess={recipes} />
 		</div>
 	);
