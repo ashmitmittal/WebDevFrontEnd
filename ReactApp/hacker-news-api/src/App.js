@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-	const [Stories, setStories] = useState([{ title: "Loading..." }]);
+	const [Stories, setStories] = useState([
+		{ title: "Loading...", by: "Please wait a min" }
+	]);
 
 	useEffect(() => {
 		const topStories = "https://hacker-news.firebaseio.com/v0/topstories.json";
@@ -33,7 +35,10 @@ function App() {
 			<ul>
 				{Stories.map((s) => (
 					<p key={s.id}>
-						<a href={s.url}>{s.title}</a>- <b>{s.by}</b>
+						<a className="item" href={s.url}>
+							{s.title}
+						</a>
+						- <b>{s.by}</b>
 					</p>
 				))}
 			</ul>
