@@ -4,6 +4,7 @@ function HookCounter1() {
 	const [count, setCount] = useState(0);
 
 	useEffect(() => {
+		console.log("in effects");
 		document.title = `You clicked ${count} times`;
 	});
 

@@ -19,8 +19,11 @@ import MessageRoundedIcon from "@material-ui/icons/MessageRounded";
 import BusinessIcon from "@material-ui/icons/Business";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-
 import { makeStyles } from "@material-ui/core/styles";
+
+// media query
+
+var x = window.matchMedia("(max-width: 700px)");
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -43,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Btn() {
 	const classes = useStyles();
+	const [size, setSize] = useState(x.matches ? false : true);
 	const [state, setState] = useState({
 		left: false
 	});
@@ -113,7 +117,17 @@ function Btn() {
 					<Typography variant="h6" className={classes.title}>
 						QuickStay
 					</Typography>
-					{/* <Button color="inhereted">Login</Button> */}
+				</Toolbar>
+			</AppBar>
+			<AppBar color="primary" position="static">
+				<Toolbar>
+					<Typography variant="h6">QuickStay</Typography>
+					<Typography style={{ marginLeft: "auto" }} variant="button">
+						<Button>Home</Button>
+						<Button>About</Button>
+						<Button>Blog</Button>
+						<Button>Parner With Us</Button>
+					</Typography>
 				</Toolbar>
 			</AppBar>
 			<Drawer open={state.left} onClose={toggleDrawer("left", false)}>
