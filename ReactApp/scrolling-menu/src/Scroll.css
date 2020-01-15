@@ -1,0 +1,25 @@
+.menu-item {
+	padding: 0 40px;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	margin: 5px 20px;
+	user-select: none;
+	cursor: pointer;
+	border: none;
+	-webkit-box-shadow: 3px 3px 15px 0px rgba(133, 123, 133, 1);
+	-moz-box-shadow: 3px 3px 15px 0px rgba(133, 123, 133, 1);
+	box-shadow: 3px 3px 15px 0px rgba(133, 123, 133, 1);
+	background-color: yellowgreen;
+}
+.menu-item-wrapper.active {
+	border: 1px white solid;
+}
+.menu-item.active {
+	border: 1px white solid;
+}
+
+.scroll-menu-arrow {
+	padding: 20px;
+	cursor: pointer;
+}
