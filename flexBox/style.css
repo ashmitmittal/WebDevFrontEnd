@@ -10,24 +10,29 @@
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+	flex-wrap: wrap;
 }
 .child1 {
 	width: 200px;
 	height: 200px;
 	background: rgb(39, 61, 134);
+	flex: 0 30%;
 }
 .child2 {
 	width: 200px;
 	height: 200px;
 	background: rgb(172, 57, 53);
+	flex: 0 30%;
 }
 .child3 {
 	width: 200px;
 	height: 200px;
 	background: rgb(149, 43, 140);
+	flex: 0 30%;
 }
 .child4 {
 	width: 200px;
 	height: 200px;
 	background: green;
+	flex: 0 30%;
 }
