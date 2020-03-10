@@ -7,8 +7,14 @@
 			href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
 			rel="stylesheet"
 		/>
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"
+		></script>
 		<link rel="stylesheet" href="./css/style.css" />
 		<link rel="stylesheet" href="./css/menu.css" />
+		<link rel="stylesheet" href="./css/loader.css" />
 		<title>Css hamburger</title>
 	</head>
 	<body>
@@ -38,5 +44,28 @@
 				<a href="#" class="btn">Read More</a>
 			</div>
 		</header>
+
+		<div id="loader">
+			<div class="lds-spinner">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<script>
+			$(window).on('load', function() {
+				$('#loader').fadeOut('slow');
+				$('.menu-wrap').fadeIn('slow');
+			});
+		</script>
 	</body>
 </html>
