@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>A Drawing App</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<div>
+			<canvas id="canvas"></canvas>
+		</div>
+
+		<div class="container row text-center  m-auto form-d">
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label for="color">Select Color</label>
+					<select class="form-control" id="color" onchange="changeColor()">
+						<option value="black">Black</option>
+						<option value="red">Red</option>
+						<option value="pink">Pink</option>
+						<option value="orange">Orange</option>
+						<option value="green">Green</option>
+						<option value="purple">Purple</option>
+						<option value="blue">Blue</option>
+						<option value="brown">Brown</option>
+						<option value="yellow">Yellow</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label for="size">Brush Size</label>
+					<select class="form-control" id="size" onchange="changeSize()">
+						<option value="1">1</option>
+						<option value="3">3</option>
+						<option value="5">5</option>
+						<option value="7">7</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<a
+			id="save"
+			style="width: 10%;"
+			class="btn btn-info d-block mt-5 mr-auto ml-auto"
+			><i class="fa fa-download" aria-hidden="true"></i>
+
+			Save
+		</a>
+	</body>
+	<script src="./app.js"></script>
+</html>
