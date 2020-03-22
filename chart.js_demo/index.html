@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Chart.js Demo</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<div class="container">
+			<canvas id="myChart"></canvas>
+		</div>
+
+		<script>
+			let myChart = document.getElementById('myChart').getContext('2d');
+
+			// Global options
+			Chart.defaults.global.defaultFontFamily = 'Lato';
+			Chart.defaults.global.defaultFontSize = 18;
+
+			let massPopChart = new Chart(myChart, {
+				type: 'bar',
+				data: {
+					labels: [
+						'New Bedford city',
+						'Brockton city',
+						'Quincy city',
+						'Lynn city'
+					],
+					datasets: [
+						{
+							label: 'Population',
+							data: [95072, 93810, 92271, 90329],
+							// backgroundColor: 'pink'
+							backgroundColor: ['#ffae8f', '#ff677d', '#cd6684', '#6f5a7e'],
+							borderWidth: 1,
+							borderColor: '#777',
+							hoverBorderWidth: 2,
+							hoverBorderColor: '#000'
+						}
+					]
+				},
+				options: {
+					title: {
+						display: true,
+						text: 'Largest Cities In Massachusetts',
+						fontSize: 25
+					},
+					legend: {
+						position: 'right',
+						labels: {
+							fontColor: 'red'
+						}
+					},
+					layout: {
+						padding: {
+							left: 50,
+							right: 0,
+							bottom: 0,
+							top: 0
+						}
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
