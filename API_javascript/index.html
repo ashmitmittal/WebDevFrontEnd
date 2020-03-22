@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>NASA</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<div class="container">
+			<canvas id="chart" height="400" width="800"></canvas>
+		</div>
+
+		<script>
+			chartIt();
+
+			async function chartIt() {
+				let { xs, ys } = await getData();
+				const ctx = document.getElementById('chart').getContext('2d');
+				const myChart = new Chart(ctx, {
+					type: 'line',
+					data: {
+						labels: xs,
+						datasets: [
+							{
+								label:
+									'Combined Land-Surface Air and Sea-Surface Water Temprature in C°',
+								data: ys,
+								fill: false,
+								backgroundColor: 'rgba(255, 99, 132, 0.2)',
+								borderColor: 'rgba(255, 99, 132, 1)',
+								borderWidth: 1
+							}
+						]
+					},
+					options: {
+						scales: {
+							yAxes: [
+								{
+									ticks: {
+										callback: function(value, index, values) {
+											return value + '°';
+										}
+									}
+								}
+							]
+						}
+					}
+				});
+			}
+
+			async function getData() {
+				let xs = [];
+				let ys = [];
+				const response = await fetch('ZonAnn.Ts+dSST.csv');
+				const data = await response.text();
+				const table = data.split('\n').slice(1);
+				table.forEach(row => {
+					const columns = row.split(',');
+					const year = columns[0];
+					xs.push(year);
+					const temp = columns[1];
+					ys.push(parseFloat(temp) + 14);
+				});
+				return { xs, ys };
+			}
+		</script>
+	</body>
+</html>
