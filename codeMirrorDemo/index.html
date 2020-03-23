@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CodeMirror</title>
+		<script src="./lib/codemirror.js"></script>
+		<link rel="stylesheet" href="./lib/codemirror.css" />
+		<link rel="stylesheet" href="./theme/dracula.css" />
+		<script src="./mode/javascript/javascript.js"></script>
+		<script src="./mode/css/css.js"></script>
+		<link rel="stylesheet" href="./addons/show-hint.css" />
+		<script src="./addons/show-hint.js"></script>
+		<script src="./addons/javascript-hint.js"></script>
+		<style>
+			body {
+				background-color: #262626;
+			}
+			#codemirror {
+				width: 50%;
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="codemirror"></div>
+		<script>
+			var editor = CodeMirror(document.getElementById('codemirror'), {
+				value: 'function testing(){\n\t alert("hello world");\n}',
+				mode: 'javascript',
+				theme: 'dracula',
+				tabSize: 1,
+				lineNumbers: true,
+				indentWithTabs: 1,
+				enterMode: 'keep',
+				tabMode: 'shift',
+				keyup: function(e) {
+					console.log('tesdsd');
+				}
+			});
+
+			// editor.on('keyup', function(cm, event) {
+			// 	if (
+			// 		!cm.state
+			// 			.completionActive /*Enables keyboard navigation in autocomplete list*/ &&
+			// 		event.keyCode != 13
+			// 	) {
+			// 		/*Enter - do not open autocomplete list just after item has been selected in it*/
+
+			// 		CodeMirror.commands.autocomplete(cm, null, { completeSingle: false });
+			// 	}
+			// });
+
+			// editor.on('inputRead', function(cm, changeObj) {
+			// 	if (
+			// 		!cm.state
+			// 			.completionActive /*Enables keyboard navigation in autocomplete list*/ &&
+			// 		event.keyCode != 13
+			// 	) {
+			// 		/*Enter - do not open autocomplete list just after item has been selected in it*/
+			// 		CodeMirror.commands.autocomplete(cm, null, { completeSingle: false });
+			// 	}
+			// });
+
+			editor.on('keyup', function(cm, event) {
+				if (
+					!cm.state
+						.completionActive /*Enables keyboard navigation in autocomplete list*/ &&
+					event.keyCode > 64 &&
+					event.keyCode < 91
+				) {
+					// only when a letter key is pressed
+					CodeMirror.commands.autocomplete(cm, null, { completeSingle: false });
+				}
+			});
+		</script>
+	</body>
+</html>
