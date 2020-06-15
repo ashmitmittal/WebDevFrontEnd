@@ -1,0 +1,40 @@
+body,
+html {
+  height: 100vh;
+}
+
+body {
+  background: #212123;
+  color: #fff;
+  font-family: sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80% auto;
+      grid-template-columns: 80% auto;
+  margin: 0;
+}
+
+body main {
+  height: 90vh;
+}
+
+body main p {
+  margin: 1em;
+  padding: 1em;
+  background: #2d2d30;
+  border-radius: 10px;
+  font-size: 0.9em;
+}
+
+body aside {
+  background-color: #2d2d30;
+}
+
+body .simple-scrollbar:before {
+  background-color: #6b6b72;
+}
+
+body .simplebar-scrollbar {
+  margin-right: 2px;
+}
+/*# sourceMappingURL=style.css.map */
